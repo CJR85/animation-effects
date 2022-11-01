@@ -39,6 +39,7 @@ body {
   box-shadow: 0 0 20px #03a9f4;
   border-radius: 10px;
   animation: animate 1.5s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
 }
 
 @keyframes animate {
@@ -62,7 +63,6 @@ body {
   width: 20px;
   height: 10px;
   background: #03a9f4;
-  // transform-origin: bottom;
   transform: rotate(8deg);
   animation: animateColor 1.5s linear infinite;
 }
@@ -73,5 +73,32 @@ body {
   }
   100% {
     filter: hue-rotate(360deg);
+  }
+}
+
+.box span i {
+  position: absolute;
+  width: 15px;
+  height: 100px;
+  background: #222;
+  border-left: 2px solid #03a9f4;
+  border-right: 2px solid #03a9f4;
+  transform-origin: top;
+  transform: rotate(79deg);
+  animation: animateColor 1.5s linear infinite,
+    animateSides 1.5s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animateSides {
+  0%,
+  40%,
+  65.1%,
+  100% {
+    background: #222;
+  }
+  40.1%,
+  65% {
+    background: #03a9f4;
   }
 }
